@@ -6,9 +6,9 @@
     <!--           color: white;-->
     <!--       }-->
     <!--   </style>-->
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet"/>
     <link href="index.css"
           rel="stylesheet"/>
-    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet"/>
     <link href="/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -624,8 +624,15 @@
  <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
 
-<!--TODO: Overriding Bootstrap Styles-->
-<!--Bootstrap makes it easy to apply professional styles, but sometimes we will need override some of the styles declared by Bootstrap. Complete the exercise described in section 6.3 Overriding Bootstrap Styles in the Full Stack Developer book.-->
+<div class="container-fluid">
+    <button class="btn btn-primary">
+        Regular Boostrap Button
+    </button>
+    <br/><br/>
+    <button class="btn btn-primary override-bs">
+        Overriden Button
+    </button>
+</div>
 
 <h2><a href="https://getbootstrap.com/docs/5.1/components/navs-tabs/">Tabs</a></h2>
 <ul class="nav nav-tabs">
@@ -643,8 +650,23 @@
    </li>
 </ul>
 
-<!--TODO: Navigating with Pills-->
-<!--Pills are another navigation widget listing several links. Complete the exercise described in section 6.2 Implementing Navigation Pills in the Full Stack Developer book.-->
+<ul class="nav nav-pills mb-2">
+    <li class="nav-item">
+        <a class="nav-link active" href="index.html">
+            Home
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="profile.html">
+            Profile
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="bookmarks.html">
+            Bookmarks
+        </a>
+    </li>
+</ul>
 
 <h2>
    <a href="https://getbootstrap.com/docs/5.1/components/card/">
