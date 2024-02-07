@@ -1,119 +1,248 @@
 <!--/Kanbas/Account/Profile/Edit/screen.html-->
 <html>
-    <head></head>
-    <body>
-        <table>
-            <tbody>
-                <tr>
-                    <!--Kanbas Navigation-->
-                    <td valign="top">
-                        <ul>
-                            <li>
-                                <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                            </li>
-                            <li>
-                                <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                            </li>
-                            <li>
-                                <a href="#">Calendar</a></li>
-                            <li>
-                                <a href="#">Inbox</a>
-                            </li>
-                            <li>
-                                <a href="#">History</a>
-                            </li>
-                            <li>
-                                <a href="#">Studio</a>
-                            </li>
-                            <li>
-                                <a href="#">Commons</a>
-                            </li>
-                            <li>
-                                <a href="#">Help</a>
-                            </li>
-                        </ul>
-                    </td>
-                    <!--Account Navigation-->
-                    <td valign="top">
-                        <ul>
-                            <li><a href="">Notifications</a></li>
-                            <li><a href="">Profile</a></li>
-                            <li><a href="">Files</a></li>
-                            <li><a href="">Settings</a></li>
-                            <li><a href="">ePortfolios</a></li>
-                            <li><a href="">Shared Content</a></li>
-                            <li><a href="">The Hub</a></li>
-                            <li><a href="">Qwickly Course Tools</a></li>
-                            <li><a href="">Global Announcements</a></li>
-                        </ul>
-                    </td>
-                    <!--Profile Edit-->
-                    <td>
-                        <h2>Jose Annunziato</h2>
-                        <label>
-                            Name:*
-                            <input type="text" value="Jose Annunziato">
-                            Pronouns
-                            <select>
-                                <option>None</option>
-                            </select>
-                        </label>
-                        <br><br>
-                        <label>
-                            Title:
-                            <input type="text">
-                        </label>
-                        <h3>Contact</h3>
-                        <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
-                        <h3>Biography</h3>
-                        <label>
-                            <br>
-                            <textarea>Faculty, Software Engineer, AI, Space, and renewables enthusiast.</textarea>
-                        </label>
-                        <h3>Links</h3>
-                        <ul>
-                            <li><a href="#">YouTube</a> Links to an external site.</li>
-                        </ul>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td align="center">
-                                        <h3>Title</h3>
-                                    </td>
-                                    <td>  </td>
-                                    <td align="center">
-                                        <h3>URL</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>-></td>
-                                    <td>
-                                        <label>
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td><a href="#">Remove</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button>Add another link</button>
-                        <br>
-                        <button>Cancel</button>
-                        <a href="/Kanbas/Account/Profile/screen.html"><button>Save Profile</button></a>
-                        <br>
-                        <button>Edit Profile</button>
-                        <a href="/Kanbas/Account/Profile/screen.html"><button>Cancel Editing</button></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+<head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/Kanbas/styles.css"/>
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css"/>
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css"/>
+    <!--Need to include this for the drop down to work-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!--Top Nav Bar (hidden until screen is small)-->
+<div class="d-sm-block d-md-none d-lg-none mb-3">
+    <div class="d-flex kanbas-header-navigation justify-content-between">
+        <a href="/Kanbas/Navigation/SidePanel/index.html"><i class="mt-3 ms-3 fa fa-bars fa-lg color-white"></i></a>
+        <div class="d-flex align-items-center color-white">
+            Justin Viasus's Profile
+        </div>
+        <i class="mt-3 me-3 color-white fa fa-chevron-down" data-bs-toggle="collapse"
+           data-bs-target="#collapseKanbasNav" aria-expanded="false" aria-controls="collapseWidthExample"></i>
+    </div>
+    <div class="collapse collapse-vertical w-100" id="collapseKanbasNav">
+        <div class="card card-body w-100">
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fa fa-home color-red"></i>
+                    <a class="no-text-decoration color-red" href="/Kanbas/Courses/Home/screen.html">Home</a>
+                </li>
+                <li>
+                    <i class="fa fa-connectdevelop color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Modules</a></li>
+                <li>
+                    <i class="fa fa-plug color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Piazza</a></li>
+                <li>
+                    <i class="fa fa-plug color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Zoom Meetings</a></li>
+                <li>
+                    <i class="fa fa-bar-chart color-red"></i>
+                    <a class="no-text-decoration color-red" href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li>
+                    <i class="fa fa-newspaper-o color-red"></i>
+                    <a class="no-text-decoration color-red"
+                       href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li>
+                    <i class="fa fa-rocket color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Quizzes</a>
+                </li>
+                <li>
+                    <i class="fa fa-user color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">People</a>
+                </li>
+                <li>
+                    <i class="fa fa-plug color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Panopto Video</a>
+                </li>
+                <li>
+                    <i class="fa fa-comment color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Discussions</a>
+                </li>
+                <li>
+                    <i class="fa fa-volume-control-phone color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Announcements</a>
+                </li>
+                <li>
+                    <i class="fa fa-sticky-note color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Pages</a>
+                </li>
+                <li>
+                    <i class="fa fa-file color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Files</a>
+                </li>
+                <li>
+                    <i class="fa fa-clipboard color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Rubrics</a>
+                </li>
+                <li>
+                    <i class="fa fa-lightbulb-o color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Outcomes</a>
+                </li>
+                <li>
+                    <i class="fa fa-circle-o color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Collaborations</a>
+                </li>
+                <li>
+                    <i class="fa fa-book color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Syllabus</a>
+                </li>
+                <li>
+                    <i class="fa fa-gear color-red"></i>
+                    <a class="no-text-decoration color-red" href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--Full Screen Elements-->
+<div class="d-flex height-100vh">
+    <ul class="wd-kanbas-navigation d-sm-none d-md-block">
+        <li class="wd-active">
+            <a href="/Kanbas/Account/Profile/screen.html">
+                <i class="fa fa-universal-access color-red"></i>Account</a>
+        </li>
+        <li>
+            <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fa fa-tachometer"></i>Dashboard</a>
+        </li>
+        <li>
+            <a href="/Kanbas/Courses/Home/screen.html">
+                <i class="fa fa-book"></i>Courses</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-calendar"></i>Calendar</a>
+        <li>
+            <a href="#">
+                <i class="fa fa-inbox"></i><br>Inbox</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-clock-o"></i><br>History</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-television"></i>Studio</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-arrow-circle-right"></i>Commons</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-question-circle"></i><br>Help</a>
+        </li>
+    </ul>
+
+    <div class="flex-column flex-fill">
+        <div class="flex-fill">
+            <div class="d-none d-md-block ms-3 mt-3">
+                <i class="fa fa-bars fa-lg color-red me-3"></i>
+                Justin Viasus's Profile
+                <hr>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="d-none d-md-block ms-3 me-3">
+                <!--Account Navigation-->
+                <ul class="wd-navigation">
+                    <li><a href="#">Notifications</a></li>
+                    <li class="wd-active"><a href="/Kanbas/Account/Profile/screen.html">Profile</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">ePortfolios</a></li>
+                    <li><a href="#">Shared Content</a></li>
+                    <li><a href="#">The Hub</a></li>
+                    <li><a href="#">Qwickly Course Tools</a></li>
+                    <li><a href="#">Global Announcements</a></li>
+                </ul>
+            </div>
+            <div class="flex-grow-1 ms-5">
+                <!--Profile Edit-->
+                <img src="../../../../images/anonymous.png" alt="Profile picture"/>
+                <br>
+                <span>Name*</span>
+                <br>
+                <label>
+                    <input class="form-control" type="text" value="Justin Viasus">
+                </label>
+                <br>
+                <span>Pronouns</span>
+                <br>
+                <label>
+                    <select class="form-control">
+                        <option>he/him</option>
+                        <option>she/her</option>
+                        <option>None</option>
+                    </select>
+                </label>
+                <br>
+                <span>Title</span>
+                <br>
+                <label>
+                    <input type="text" class="form-control">
+                </label>
+                <h3 class="mt-4">Contact</h3>
+                <p>No registered services, you can add some on the <a class="no-text-decoration color-red" href="#">settings</a>
+                    page.</p>
+                <h3 class="mt-4">Biography</h3>
+                <label>
+                    <textarea class="form-control">5th year Computer Science student.</textarea>
+                </label>
+                <h3 class="mt-4">Links</h3>
+                <ul>
+                    <li><a href="#">YouTube</a> Links to an external site.</li>
+                </ul>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td align="center">
+                            <h3>Title</h3>
+                        </td>
+                        <td></td>
+                        <td align="center">
+                            <h3>URL</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input class="form-control" type="text">
+                            </label>
+                        </td>
+                        <td>
+                            <i class="fa fa-arrow-right"></i>
+                        </td>
+                        <td>
+                            <label>
+                                <input class="form-control" type="text">
+                            </label>
+                        </td>
+                        <td><a href="#">
+                            <i class="fa fa-close color-red"></i>
+                        </a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-light">Add another link</button>
+                <hr>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-light">Cancel</button>
+                    <a class="ms-1" href="/Kanbas/Account/Profile/screen.html">
+                        <button type="button" class="btn btn-danger">Save Profile</button>
+                    </a>
+                </div>
+            </div>
+            <a href="/Kanbas/Account/Profile/Edit/screen.html" class="me-5">
+                <button type="button" class="btn btn-light">
+                    <i class="fa fa-pencil"></i>
+                    Cancel Editing
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
 </html>
