@@ -30,15 +30,4 @@
   margin-bottom: 5px;
 }
 
-.kanbas-header-navigation {
-  background-color: black;
-  width: 100%;
-}
-
-.center-aligned {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 

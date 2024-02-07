@@ -6,6 +6,28 @@ body * {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.ul-no-style {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.kanbas-header-navigation {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+}
+
+.center-aligned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* == Colors == */
 .color-red {
   color: #b52828;
