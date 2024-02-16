@@ -29,7 +29,6 @@ function JavaScript() {
             <House/>
             <Spreading/>
             <Destructing/>
-            {/*TODO Implementing Navigation in Single Page Applications*/}
         </div>
     );
 }

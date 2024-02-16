@@ -3,15 +3,23 @@ import './App.css';
 import Labs from "./Labs";
 import Kanbas from "./Kanbas";
 import HelloWorld from "./Labs/a3/HelloWorld";
+import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
 
 function App() {
     return (
-        <div>
-            <Labs/>
-            <Kanbas/>
-            <HelloWorld/>
-        </div>
+        <HashRouter>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/Labs"/>}/>
+                    <Route path="/Labs/*" element={<Labs/>}/>
+                    <Route path="/Kanbas/*" element={<Kanbas/>}/>
+                    <Route path="/hello" element={<HelloWorld/>}/>
+                </Routes>
+            </div>
+        </HashRouter>
     );
 }
 
 export default App;
+
+// TODO 2.3.2 Implementing a Navigation component
