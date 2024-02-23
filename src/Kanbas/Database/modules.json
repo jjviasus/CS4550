@@ -1,116 +1,210 @@
 [
   {
-    "_id": "M101",
-    "name": "Introduction to Rocket Propulsion",
-    "description": "Basic principles of rocket propulsion and rocket engines.",
-    "course": "RS101",
+    "_id": "CS1234-M1",
+    "name": "React Basics",
+    "description": "Introduction to React JS fundamentals.",
+    "course": "CS1234",
     "lessons": [
       {
-        "_id": "L101",
-        "name": "History of Rocketry",
-        "description": "A brief history of rocketry and space exploration.",
-        "module": "M101"
+        "_id": "CS1234-L1",
+        "name": "Introduction to JSX",
+        "description": "Understanding JSX syntax and usage.",
+        "module": "CS1234-M1"
       },
       {
-        "_id": "L102",
-        "name": "Rocket Propulsion Fundamentals",
-        "description": "Basic principles of rocket propulsion.",
-        "module": "M101"
+        "_id": "CS1234-L2",
+        "name": "Components and Props",
+        "description": "Creating and using components in React.",
+        "module": "CS1234-M1"
       },
       {
-        "_id": "L103",
-        "name": "Rocket Engine Types",
-        "description": "Overview of different types of rocket engines.",
-        "module": "M101"
+        "_id": "CS1234-L3",
+        "name": "State and Lifecycle",
+        "description": "Managing component state and lifecycle methods.",
+        "module": "CS1234-M1"
       }
     ]
   },
   {
-    "_id": "M102",
-    "name": "Fuel and Combustion",
-    "description": "Understanding rocket fuel, combustion processes, and efficiency.",
-    "course": "RS101",
+    "_id": "CS1234-M2",
+    "name": "React Hooks",
+    "description": "Understanding React Hooks for state management and side effects.",
+    "course": "CS1234",
     "lessons": [
       {
-        "_id": "L201",
-        "name": "Rocket Fuel",
-        "description": "Overview of different types of rocket fuels.",
-        "module": "M102"
+        "_id": "CS1234-L4",
+        "name": "useState Hook",
+        "description": "Using the useState Hook for managing component state.",
+        "module": "CS1234-M2"
       },
       {
-        "_id": "L202",
-        "name": "Combustion Processes",
-        "description": "Understanding combustion processes and efficiency.",
-        "module": "M102"
+        "_id": "CS1234-L5",
+        "name": "useEffect Hook",
+        "description": "Understanding the useEffect Hook for handling side effects.",
+        "module": "CS1234-M2"
       },
       {
-        "_id": "L203",
-        "name": "Combustion Instability",
-        "description": "Understanding combustion instability and mitigation.",
-        "module": "M102"
+        "_id": "CS1234-L6",
+        "name": "Custom Hooks",
+        "description": "Creating and using custom Hooks in React applications.",
+        "module": "CS1234-M2"
       }
     ]
   },
   {
-    "_id": "M103",
-    "name": "Nozzle Design",
-    "description": "Principles of rocket nozzle design and performance optimization.",
-    "course": "RS101",
+    "_id": "MS1001-M1",
+    "name": "Introduction to Music Recording",
+    "description": "Basic principles and techniques of music recording.",
+    "course": "MS1001",
     "lessons": [
       {
-        "_id": "L301",
-        "name": "Nozzle Design",
-        "description": "Overview of different types of rocket nozzles.",
-        "module": "M103"
+        "_id": "MS1001-L1",
+        "name": "Recording Equipment",
+        "description": "Overview of recording equipment and tools.",
+        "module": "MS1001-M1"
       },
       {
-        "_id": "L302",
-        "name": "Nozzle Performance",
-        "description": "Understanding nozzle performance and efficiency.",
-        "module": "M103"
+        "_id": "MS1001-L2",
+        "name": "Microphone Types",
+        "description": "Understanding different types of microphones.",
+        "module": "MS1001-M1"
       },
       {
-        "_id": "L303",
-        "name": "Nozzle Optimization",
-        "description": "Optimizing nozzle design for specific applications.",
-        "module": "M103"
+        "_id": "MS1001-L3",
+        "name": "Recording Techniques",
+        "description": "Basic recording techniques and best practices.",
+        "module": "MS1001-M1"
       }
     ]
   },
   {
-    "_id": "M201",
-    "name": "Fundamentals of Aerodynamics",
-    "description": "Basic aerodynamic concepts and fluid dynamics principles.",
-    "course": "RS102"
+    "_id": "MS1002-M1",
+    "name": "Advanced Music Production",
+    "description": "Exploring advanced techniques in music production.",
+    "course": "MS1002",
+    "lessons": [
+      {
+        "_id": "MS1002-L1",
+        "name": "Mixing and Mastering",
+        "description": "Advanced mixing and mastering techniques.",
+        "module": "MS1002-M1"
+      },
+      {
+        "_id": "MS1002-L2",
+        "name": "Synthesis and Sound Design",
+        "description": "Creating custom sounds using synthesis techniques.",
+        "module": "MS1002-M1"
+      },
+      {
+        "_id": "MS1002-L3",
+        "name": "Arrangement and Composition",
+        "description": "Structuring and arranging music compositions.",
+        "module": "MS1002-M1"
+      }
+    ]
   },
   {
-    "_id": "M202",
-    "name": "Subsonic and Supersonic Flow",
-    "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
-    "course": "RS102"
+    "_id": "MS1003-M1",
+    "name": "Music Business and Marketing",
+    "description": "Understanding the business side of the music industry.",
+    "course": "MS1003",
+    "lessons": [
+      {
+        "_id": "MS1003-L1",
+        "name": "Music Copyright and Licensing",
+        "description": "Understanding music copyright laws and licensing.",
+        "module": "MS1003-M1"
+      },
+      {
+        "_id": "MS1003-L2",
+        "name": "Marketing Strategies",
+        "description": "Developing effective marketing strategies for musicians.",
+        "module": "MS1003-M1"
+      },
+      {
+        "_id": "MS1003-L3",
+        "name": "Distribution Channels",
+        "description": "Exploring different distribution channels for music.",
+        "module": "MS1003-M1"
+      }
+    ]
   },
   {
-    "_id": "M203",
-    "name": "Aerodynamic Heating",
-    "description": "Study of aerodynamic heating and thermal protection systems.",
-    "course": "RS102"
+    "_id": "CS2000-M1",
+    "name": "C++ Fundamentals",
+    "description": "Introduction to C++ programming language basics.",
+    "course": "CS2000",
+    "lessons": [
+      {
+        "_id": "CS2000-L1",
+        "name": "Syntax and Data Types",
+        "description": "Basic syntax rules and fundamental data types in C++.",
+        "module": "CS2000-M1"
+      },
+      {
+        "_id": "CS2000-L2",
+        "name": "Control Flow and Loops",
+        "description": "Understanding control flow statements and loop structures.",
+        "module": "CS2000-M1"
+      },
+      {
+        "_id": "CS2000-L3",
+        "name": "Functions and Classes",
+        "description": "Creating and using functions and classes in C++.",
+        "module": "CS2000-M1"
+      }
+    ]
   },
   {
-    "_id": "M301",
-    "name": "Spacecraft Structural Design",
-    "description": "Fundamentals of designing spacecraft structures and materials selection.",
-    "course": "RS103"
+    "_id": "CS3000-M1",
+    "name": "Android App Development",
+    "description": "Building Android applications using Java and Android SDK.",
+    "course": "CS3000",
+    "lessons": [
+      {
+        "_id": "CS3000-L1",
+        "name": "Introduction to Android Development",
+        "description": "Overview of Android app development and setup.",
+        "module": "CS3000-M1"
+      },
+      {
+        "_id": "CS3000-L2",
+        "name": "User Interface Design",
+        "description": "Designing user interfaces for Android apps.",
+        "module": "CS3000-M1"
+      },
+      {
+        "_id": "CS3000-L3",
+        "name": "Data Persistence and Networking",
+        "description": "Storing data locally and communicating with servers.",
+        "module": "CS3000-M1"
+      }
+    ]
   },
   {
-    "_id": "M302",
-    "name": "Orbital Mechanics",
-    "description": "Understanding orbital dynamics and mission planning.",
-    "course": "RS103"
-  },
-  {
-    "_id": "M303",
-    "name": "Spacecraft Systems Engineering",
-    "description": "Overview of spacecraft systems and subsystems engineering.",
-    "course": "RS103"
+    "_id": "MS2000-M1",
+    "name": "Advanced Music Production Techniques",
+    "description": "Exploring advanced techniques in music production with Logic Pro X.",
+    "course": "MS2000",
+    "lessons": [
+      {
+        "_id": "MS2000-L1",
+        "name": "Audio Effects and Processing",
+        "description": "Using audio effects and processing tools in Logic Pro X.",
+        "module": "MS2000-M1"
+      },
+      {
+        "_id": "MS2000-L2",
+        "name": "Virtual Instruments and MIDI",
+        "description": "Using virtual instruments and MIDI in music production.",
+        "module": "MS2000-M1"
+      },
+      {
+        "_id": "MS2000-L3",
+        "name": "Advanced Mixing Techniques",
+        "description": "Exploring advanced mixing techniques for professional audio production.",
+        "module": "MS2000-M1"
+      }
+    ]
   }
 ]

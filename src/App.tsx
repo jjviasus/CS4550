@@ -4,6 +4,10 @@ import Labs from "./Labs";
 import Kanbas from "./Kanbas";
 import HelloWorld from "./Labs/a3/HelloWorld";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 function App() {
     return (
