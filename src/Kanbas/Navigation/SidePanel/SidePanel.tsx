@@ -11,8 +11,8 @@ function SidePanel() {
 
     const menuItems = [
         {label: "Dashboard", iconClass: "fa fa-tachometer", to: "/Kanbas/Dashboard"},
-        {label: "Account", iconClass: "fa fa-universal-access", to: "/Kanbas/Account/Profile"},
-        {label: "Courses", iconClass: "fa fa-book", to: "/Kanbas/Dashboard"},
+        {label: "Account", iconClass: "fa fa-universal-access", to: "/Kanbas/Account"},
+        {label: "Courses", iconClass: "fa fa-book", to: "/Kanbas/Courses"},
         {label: "Calendar", iconClass: "fa fa-calendar", to: "#"},
         {label: "Inbox", iconClass: "fa fa-inbox", to: "#"},
         {label: "History", iconClass: "fa fa-clock-o", to: "#"},

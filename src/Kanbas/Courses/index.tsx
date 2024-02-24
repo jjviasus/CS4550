@@ -1,5 +1,5 @@
 import {courses} from "../../Kanbas/Database";
-import {useLocation, useParams} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import "../styles.css"
@@ -7,11 +7,15 @@ import TopNavBar from "../Navigation/TopNavBar/TopNavBar";
 import lectures from "../../Kanbas/Database/lectures.json";
 import Grades from "./Grades";
 import Assignments from "./Assignments";
+import {useState} from "react";
 
 function Courses() {
     const {courseId} = useParams();
     const course = courses.find((course) => course._id === courseId);
     const {pathname} = useLocation();
+
+    // Extract the last part of the pathname
+    const lastPathSegment = pathname.split('/').pop();
 
     // Determine the component to render based on the pathname
     const renderComponent = () => {
@@ -29,22 +33,32 @@ function Courses() {
         }
     };
 
+    // Function to toggle the navigation visibility
+    const [isNavVisible, setIsNavVisible] = useState(true);
+    const toggleNavVisibility = () => setIsNavVisible(!isNavVisible);
+
     return (
         <>
-            <TopNavBar title={course?.name}/>
+            <TopNavBar title={course?.name} courseId={courseId}/>
             <div className="flex-column flex-fill">
                 <div className="d-none d-md-block ms-3 mt-3">
-                    <i className="fa fa-bars fa-lg color-red"></i>
-                    <a href="/Kanbas/Courses/Home/screen.html"
-                       className="color-red ms-lg-3 no-text-decoration">{course?.name}</a>
+                    <button type="button" className="btn" onClick={toggleNavVisibility}>
+                        <i className="fa fa-bars fa-lg color-red"></i>
+                    </button>
+                    <Link to={`/Kanbas/Courses/${courseId}/Home`} className="color-red ms-lg-3 no-text-decoration">
+                        {course?.name}
+                    </Link>
                     <i className="fa fa-chevron-right ms-lg-3"></i>
-                    <span className="ms-lg-3">Modules</span>
+                    <span className="ms-lg-3">{lastPathSegment}</span>
                     <hr/>
                 </div>
                 <div className="d-flex">
-                    <div className="d-none d-md-block ms-3 mt-3">
-                        <CourseNavigation/>
-                    </div>
+                    {isNavVisible && (
+                        <div className="d-md-block ms-3 mt-3">
+                            Spring 2024 Semester
+                            <CourseNavigation/>
+                        </div>
+                    )}
                     <div className="flex-fill me-5 ms-3">
                         {(pathname.includes('/Home') || pathname.includes('/Modules')) && (
                             <div className="d-flex justify-content-end mt-4 mb-5 text-nowrap">
@@ -69,6 +83,7 @@ function Courses() {
                                 </button>
                             </div>
                         )}
+                        {/*Content Component*/}
                         {renderComponent()}
                     </div>
                     <div className="flex-grow-0 me-2 d-none d-lg-block me-3" style={{width: '250px'}}>

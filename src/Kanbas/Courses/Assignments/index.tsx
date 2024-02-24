@@ -13,7 +13,7 @@ function Assignments() {
     return (
         <>
             <div className="flex-fill">
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between mt-3">
                     <input placeholder="Search For Assignments"/>
                     <div>
                         <button type="button" className="btn btn-light">

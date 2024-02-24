@@ -5,9 +5,10 @@ import {Link} from "react-router-dom";
 
 interface NavTitle {
     title: string | undefined;
+    courseId: string | undefined;
 }
 
-function TopNavBar({title}: NavTitle) {
+function TopNavBar({title, courseId}: NavTitle) {
     return (
         <div className="d-sm-block d-md-none d-lg-none">
             <div className="d-flex kanbas-header-navigation justify-content-between">
@@ -32,28 +33,31 @@ function TopNavBar({title}: NavTitle) {
                     <ul className="list-unstyled">
                         <li>
                             <i className="fa fa-home color-red"></i>
-                            <a className="no-text-decoration color-red ms-2" href="/Kanbas/Courses/Home/screen.html">Home</a>
+                            <Link className="no-text-decoration color-red ms-2" to={`/Kanbas/Courses/${courseId}/Home`}>Home</Link>
                         </li>
                         <li>
                             <i className="fa fa-connectdevelop color-red"></i>
-                            <a className="no-text-decoration color-red ms-1" href="#">Modules</a></li>
+                            <Link className="no-text-decoration color-red ms-1" to={`/Kanbas/Courses/${courseId}/Modules`}>Modules</Link>
+                        </li>
                         <li>
                             <i className="fa fa-plug color-red"></i>
-                            <a className="no-text-decoration color-red ms-2 " href="#">Piazza</a></li>
+                            <a className="no-text-decoration color-red ms-2 " href="#">Piazza</a>
+                        </li>
                         <li>
                             <i className="fa fa-plug color-red"></i>
                             <a className="no-text-decoration color-red ms-2" href="#">Zoom Meetings</a></li>
                         <li>
                             <i className="fa fa-bar-chart color-red"></i>
                             <a className="no-text-decoration color-red ms-1"
-                               href="/Kanbas/Courses/Grades/screen.html">Index</a></li>
+                               href="/Kanbas/Courses/Grades/screen.html">Index</a>
+                        </li>
                         <li>
-                            <i className="fa fa-newspaper-o color-red"></i>
-                            <a className="no-text-decoration color-red ms-1"
-                               href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                            <i className="fa fa-plug color-red"></i>
+                            <Link className="no-text-decoration color-red ms-2" to={`/Kanbas/Courses/${courseId}/Assignments`}>Assignments</Link>
+                        </li>
                         <li>
                             <i className="fa fa-rocket color-red"></i>
-                            <a className="no-text-decoration color-red ms-2" href="#">Quizzes</a>
+                            <Link className="no-text-decoration color-red ms-2" to={`/Kanbas/Courses/${courseId}/Quizzes`}>Quizzes</Link>
                         </li>
                         <li>
                             <i className="fa fa-user color-red"></i>

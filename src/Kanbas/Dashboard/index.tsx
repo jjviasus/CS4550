@@ -6,7 +6,7 @@ import TopNavBar from "../Navigation/TopNavBar/TopNavBar";
 function Dashboard() {
     return (
         <>
-            <TopNavBar title={"Dashboard"}/>
+            <TopNavBar title={"Dashboard"} courseId={undefined}/>
             <div className="p-4">
                 <h1>Dashboard</h1>
                 <hr/>
