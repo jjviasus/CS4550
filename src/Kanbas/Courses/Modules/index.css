@@ -30,3 +30,8 @@
 .wd-modules > li {
   margin-bottom: 20px;
 }
+
+.wd-modules-btn {
+  border-radius: 8px;
+  padding: 1px 10px;
+}

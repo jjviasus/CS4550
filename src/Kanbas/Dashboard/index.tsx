@@ -1,17 +1,50 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {courses} from "../Database";
+import db from "../Database";
 import TopNavBar from "../Navigation/TopNavBar/TopNavBar";
 
-function Dashboard() {
+function Dashboard(
+    {
+        courses, course, setCourse, addNewCourse,
+        deleteCourse, updateCourse
+    }: {
+        courses: any[]; course: any; setCourse: (course: any) => void;
+        addNewCourse: () => void; deleteCourse: (course: any) => void;
+        updateCourse: () => void;
+    }) {
+
     return (
         <>
             <TopNavBar title={"Dashboard"} courseId={undefined}/>
             <div className="p-4">
                 <h1>Dashboard</h1>
                 <hr/>
-                <h2>Published Courses ({courses.length})</h2>
+                <div className="width-100px">
+                    <h5>Course</h5>
+                    <input value={course.name} className="form-control"
+                           onChange={(e) => setCourse({...course, name: e.target.value})}/>
+                    <input value={course.number} className="form-control"
+                           onChange={(e) => setCourse({...course, number: e.target.value})}/>
+                    <input value={course.startDate} className="form-control" type="date"
+                           onChange={(e) => setCourse({...course, startDate: e.target.value})}/>
+                    <input value={course.endDate} className="form-control" type="date"
+                           onChange={(e) => setCourse({...course, endDate: e.target.value})}/>
+                    <button
+                        onClick={addNewCourse}
+                        className="btn btn-success mt-3 me-1"
+                    >
+                        Add
+                    </button>
+                    <button
+                        onClick={updateCourse}
+                        className="btn btn-warning mt-3"
+                    >
+                        Update
+                    </button>
+                </div>
+
                 <hr/>
+                <h2>Published Courses ({courses.length})</h2>
                 <div className="row">
                     <div className="row row-cols-1 row-cols-md-5 g-4">
                         {courses.map((course) => (
@@ -22,10 +55,39 @@ function Dashboard() {
                                     <div className="card-body">
                                         <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
                                               style={{textDecoration: "none", color: "navy", fontWeight: "bold"}}>
-                                            {course.name} </Link>
+                                            {course.name}
+                                        </Link>
                                         <p className="card-text">{course.name}</p>
-                                        <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary">
-                                            Go </Link>
+                                        <div className="d-flex justify-content-between">
+                                            <Link
+                                                to={`/Kanbas/Courses/${course._id}/Home`}
+                                                className="btn btn-primary"
+                                            >
+                                                Go
+                                            </Link>
+                                            <div className="d-flex">
+                                                <button
+                                                    onClick={(event) => {
+                                                        event.preventDefault();
+                                                        setCourse(course);
+                                                    }}
+                                                    type="button"
+                                                    className="btn btn-warning me-1"
+                                                >
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    onClick={(event) => {
+                                                        event.preventDefault();
+                                                        deleteCourse(course._id);
+                                                    }}
+                                                    type="button"
+                                                    className="btn btn-danger"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
