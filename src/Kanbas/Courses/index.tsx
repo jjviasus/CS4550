@@ -6,12 +6,21 @@ import TopNavBar from "../Navigation/TopNavBar/TopNavBar";
 import lectures from "../../Kanbas/Database/lectures.json";
 import Grades from "./Grades";
 import Assignments from "./Assignments";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-function Courses({ courses }: { courses: any[]; }) {
+function Courses() {
     const {courseId} = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const COURSES_API = "http://localhost:4000/api/courses";
+    const [course, setCourse] = useState<any>({_id: ""});
     const {pathname} = useLocation();
+
+    const findCourseById = async (courseId?: string) => {
+        const response = await axios.get(
+            `${COURSES_API}/${courseId}`
+        );
+        setCourse(response.data);
+    };
 
     // Extract the last part of the pathname
     const lastPathSegment = pathname.split('/').pop();
@@ -35,6 +44,10 @@ function Courses({ courses }: { courses: any[]; }) {
     // Function to toggle the navigation visibility
     const [isNavVisible, setIsNavVisible] = useState(true);
     const toggleNavVisibility = () => setIsNavVisible(!isNavVisible);
+
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
 
     return (
         <>

@@ -1,13 +1,31 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 // import "./index.css";
-import db from "../../Database";
 import {useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {KanbasState} from "../../store";
-import {addModule, deleteModule, setModule, updateModule} from "./reducer";
+import {addModule, deleteModule, setModule, setModules, updateModule} from "./reducer";
+import * as client from "./client";
+import {createModule, findModulesForCourse} from "./client";
 
 function ModuleList() {
+    const handleUpdateModule = async () => {
+        const status = await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
+    const handleDeleteModule = (moduleId: string) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
     const {courseId} = useParams();
+    useEffect(() => {
+        findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId]);
 
     const modulesList = useSelector((state: KanbasState) =>
         state.modulesReducer.modules);
@@ -15,7 +33,14 @@ function ModuleList() {
         state.modulesReducer.module);
     const dispatch = useDispatch();
 
-    const [selectedModule, setSelectedModule] = useState(modulesList[0]);
+    const [selectedModule, setSelectedModule] = useState(null);
+
+    const handleAddModule = () => {
+        createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
+
     return (
         <>
             {/* <!-- Add buttons here --> */}
@@ -32,13 +57,17 @@ function ModuleList() {
                 className="form-control mb-3"
             />
             <button
-                onClick={() => dispatch(addModule({...module, course: courseId}))}
+                onClick={
+                    handleAddModule
+                }
                 className="btn btn-success"
             >
                 Add
             </button>
             <button
-                onClick={() => dispatch(updateModule(module))}
+                onClick={
+                    handleUpdateModule
+                }
                 className="btn btn-warning ms-2"
             >
                 Update
@@ -60,7 +89,7 @@ function ModuleList() {
                                 <i className="fa fa-plus ms-2"></i>
                                 <i className="fa fa-ellipsis-v ms-2"></i>
                                 <button
-                                    onClick={() => dispatch(deleteModule(module._id))}
+                                    onClick={() => handleDeleteModule(module._id)}
                                     className="btn btn-danger ms-2 wd-modules-btn"
                                 >
                                     Delete
@@ -73,7 +102,7 @@ function ModuleList() {
                                 </button>
                             </span>
                             </div>
-                            {selectedModule._id === module._id && (
+                            {selectedModule && (
                                 <ul className="list-group">
                                     {module.lessons?.map((lesson: {
                                         _id: string;
