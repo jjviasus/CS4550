@@ -3,7 +3,7 @@ import KanbasNavigation from "./Navigation";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import SidePanel from "./Navigation/SidePanel/SidePanel";
-import Account from "./Account/Account";
+import Account from "./Account/index";
 import {useEffect, useState} from "react";
 import store from "./store";
 import {Provider} from "react-redux";
@@ -65,7 +65,7 @@ function Kanbas() {
                     <div style={{flexGrow: 1}}>
                         <Routes>
                             <Route path="/" element={<Navigate to="Dashboard"/>}/>
-                            <Route path="Account" element={<Account/>}/>
+                            <Route path="/Account/*" element={<Account/>}/>
                             <Route path="Dashboard" element={
                                 <Dashboard
                                     courses={courses}

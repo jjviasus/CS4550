@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-import db from "../Database";
 import TopNavBar from "../Navigation/TopNavBar/TopNavBar";
 
 function Dashboard(
@@ -24,7 +23,7 @@ function Dashboard(
                     <input value={course.name} className="form-control"
                            onChange={(e) => setCourse({...course, name: e.target.value})}/>
                     <input value={course.number} className="form-control"
-                           onChange={(e) => setCourse({...course, number: e.target.value})}/>
+                           onChange={(e) => setCourse({...course, number: e.target.value, _id: e.target.value})}/>
                     <input value={course.startDate} className="form-control" type="date"
                            onChange={(e) => setCourse({...course, startDate: e.target.value})}/>
                     <input value={course.endDate} className="form-control" type="date"
